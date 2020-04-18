@@ -40,3 +40,11 @@ def reconstruct_trip(tickets, length):
         route[i] = hash_table_retrieve(hashtable, route[i-1])
 
     print(route[0:length-1])
+
+    # use list comprehension to remove the 'NONE' value from
+    # the route list and return the result retrieved from last
+    # tickest destination(value)
+    route = route[0:length-1]
+
+    # return the route
+    return route
