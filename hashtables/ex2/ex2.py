@@ -39,4 +39,4 @@ def reconstruct_trip(tickets, length):
         # Route is just a list of destinations
         route[i] = hash_table_retrieve(hashtable, route[i-1])
 
-    print(route[0:length-1])
+    print(route)
