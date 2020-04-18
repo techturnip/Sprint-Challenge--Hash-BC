@@ -16,8 +16,6 @@ def reconstruct_trip(tickets, length):
     hashtable = HashTable(length)
     route = [None] * length
 
-    """
-    YOUR CODE HERE
-    """
+    print(f'Length: {length}')
 
     pass
