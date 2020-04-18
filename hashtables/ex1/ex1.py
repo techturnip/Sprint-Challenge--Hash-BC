@@ -9,9 +9,10 @@ from hashtables import (HashTable,
 def get_indices_of_item_weights(weights, length, limit):
     ht = HashTable(16)
 
-    """
-    YOUR CODE HERE
-    """
+    # print the inputs we are working with
+    print(f'\nLength: {length}')
+    print(f'Weights: {weights}')
+    print(f'Limit: {limit}')
 
     return None
 
