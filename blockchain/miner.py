@@ -25,6 +25,15 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
+    # encode last proof
+    encoded_proof = f'{last_proof}'.encode()
+
+    # hash the encoded_proof
+    last_hash = hashlib.sha256(encoded_proof).hexdigest()
+
+    while valid_proof(last_hash, proof) is False:
+        # increment proof until valid is found
+        proof += 1
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
@@ -40,7 +49,15 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    # encode guess
+    guess = f'{proof}'.encode()
+
+    # hash guess
+    hashed_guess = hashlib.sha256(guess).hexdigest()
+
+    # return true if valid
+    # multi-ouroborus check using list comps
+    return hashed_guess[:5] == last_hash[-5:]
 
 
 if __name__ == '__main__':
